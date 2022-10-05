@@ -4,6 +4,8 @@
   "description": "messanger bot for facebook group",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +22,11 @@
     "axios": "^1.0.0",
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

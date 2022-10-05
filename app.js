@@ -2,7 +2,8 @@ require('dotenv').config({path: '.env.dev'});
 const app = require('express')();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
-
+const nodemon = require('nodemon')
+const ngrok = require('ngrok')
 const routes = require('./routes');
 
 app.use(bodyParser.json());
