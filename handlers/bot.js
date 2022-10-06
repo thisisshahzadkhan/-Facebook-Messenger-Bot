@@ -7,8 +7,8 @@ const responseMessages = ["How are you?", "I hope you're doing well.", "I hope y
 const handleMessage = async (senderId, message) => {
     console.log('message', message);
     // Greeting Message
-    if (message.includes(incommingMessages)){
-       await responseToFB(senderId, responseMessages[Math.floor(Math.random() * helloMessageResponses.length)]);
+    if (incommingMessages.includes(message)){
+       await responseToFB(senderId, responseMessages[Math.floor(Math.random() * responseMessages.length)]);
        return;
     }
     
@@ -41,7 +41,6 @@ const handleMessage = async (senderId, message) => {
             return;
         }
     }
-    await responseToFB(senderId, 'Your query is hard to interpret can you please read the documentation!');
     return;
 }
 

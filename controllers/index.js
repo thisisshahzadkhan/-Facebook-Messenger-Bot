@@ -9,7 +9,7 @@ const verification = async (req, res) => {
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
     // Check the mode and token sent is correct
-    if (mode === "subscribe" && token === process.env.FB_ACCESS_TOKEN) {
+    if (mode === "subscribe" && token === process.env.FB_VERIFY_TOKEN) {
       // Respond with the challenge token from the request
       console.log("WEBHOOK_VERIFIED");
       res.status(200).send(challenge);
@@ -28,7 +28,8 @@ const reply = async (req, res) => {
         entry.forEach(entry => { 
             const [messages] = entry.messaging;
             const senderId = messages.sender.id;
-            handleMessage(senderId, messages.message.text);
+            if (messages.message && messages.message.text && !messages.message.is_echo)
+                handleMessage(senderId, messages.message.text);
         });
         res.status(200).send('EVENT_RECEIVED');
     }
