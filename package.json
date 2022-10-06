@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/thisisshahzadkhan/-Facebook-Messenger-Bot#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "axios": "^1.0.0",
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.3",

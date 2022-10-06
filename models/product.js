@@ -1,4 +1,4 @@
-const sequelize = require('../connection');
+const sequelize = require('../sequelize');
 const { DataTypes } = require('sequelize');
 const product =  sequelize.define('product', {
     id: {
@@ -29,7 +29,6 @@ const product =  sequelize.define('product', {
     },
 }, {
     sequelize,
-    tableName: 'product',
-    timestamps: true,
+    tableName: 'product'
 });
 module.exports = product;

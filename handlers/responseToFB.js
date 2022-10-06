@@ -12,6 +12,6 @@ module.exports.responseToFB = async (senderId, response) => {
             }
         });
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 };
