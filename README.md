@@ -1,12 +1,3 @@
-# Facebook-Messenger-Bot
-# Task 1
-    - setup database credentials, facebook auth token, facebook verify token, sendGrid token in .env <br />
-    - add webhook (POST/GET) url in facebook developer portal along with verify token <br />
-    - To start project <br />
-        <ul>
-        <li>run node app.js</li>
-        <li>ngrok http 3000 --region=us</li>
-        </ul>
 # Task 3
 <br/>
     - To start project run `node seeder.js` <br />
