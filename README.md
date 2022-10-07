@@ -5,8 +5,8 @@
     - add webhook (POST/GET) url in facebook developer portal along with verify token <br />
     - To start project <br />
         <ul>
-        <li>run node app.js<li>
-        <li>ngrok http 3000 --region=us<li>
+        <li>run node app.js</li>
+        <li>ngrok http 3000 --region=us</li>
         </ul>
     <br />
 # Task 3
