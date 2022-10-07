@@ -7,7 +7,7 @@
         <li>run node app.js</li>
         <li>ngrok http 3000 --region=us</li>
         </ul>
-# Task 2
+# Task 3
 <br/>
     - To start project run `node seeder.js` <br />
     - <b>Explaination:</b> Every DB has some limit at which the data can be written to it. To handle that issue the data should be divided into chunks<br/>
