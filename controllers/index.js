@@ -53,8 +53,14 @@ const reply = async (req, res) => {
 
 const userLog = async (req, res) => {
   try {
-    const instance =await user.get("9f4ff4f7-1665-4c45-a470-efd8afd5e7cf");
-    res.json({'log' : instance});
+    const from = parseInt(req.query.from??0);
+    const limit = parseInt(req.query.limit??0);
+    const instance =await user.scan().exec();
+    if (from === 0 || limit === 0)
+      res.json({'log' : instance});
+    else
+      res.json({'log' : instance.slice(from, (from + limit))});
+    
   } catch (error) {
     res.json({'error': error});
   }
