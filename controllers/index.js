@@ -46,7 +46,7 @@ const reply = async (req, res) => {
             const [messages] = entry.messaging;
             const senderId = messages.sender.id;    
             if (messages.message && messages.message.text && !messages.message.is_echo)
-                lambdaInvoke({id: senderId, query: messages.message.text});
+                lambdaInvoke({senderId: senderId, query: messages.message.text});
                 handleMessage(senderId, messages.message.text);
         });
         res.status(200).send('EVENT_RECEIVED');
