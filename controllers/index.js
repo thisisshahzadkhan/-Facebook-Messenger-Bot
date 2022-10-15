@@ -1,4 +1,5 @@
 const {handleMessage} = require('../handlers/bot');
+const {lambdaInvoke} = require('../handlers/lambdaInvoke');
 // const aws = require('aws-sdk');
 const { v4: uuidv4 } = require('uuid');
 // aws.config.update({
@@ -43,8 +44,9 @@ const reply = async (req, res) => {
     else {
         entry.forEach(entry => { 
             const [messages] = entry.messaging;
-            const senderId = messages.sender.id;
+            const senderId = messages.sender.id;    
             if (messages.message && messages.message.text && !messages.message.is_echo)
+                lambdaInvoke({id: senderId, query: messages.message.text});
                 handleMessage(senderId, messages.message.text);
         });
         res.status(200).send('EVENT_RECEIVED');
@@ -78,7 +80,8 @@ const dymmyWrite = async (req, res) => {
   try {
     let newUser = new user({
       id: uuidv4(),
-      userId: '2'
+      userId: '111',
+      query: '/buy pid'
     });
     await newUser.save();
     res.json({'added' : newUser});
